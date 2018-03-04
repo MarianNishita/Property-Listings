@@ -14,6 +14,9 @@
 					angular.forEach(data.saved, function(value,key){
 						$scope.saved.push(value);
 					})
+				$scope.isVisible = function(id) {
+					return true;
+				};
 			});
 		});
 

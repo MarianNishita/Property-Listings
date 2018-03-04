@@ -1,24 +1,38 @@
 <!DOCTYPE html>
-<head>
+<html ng-app="property">
+	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
-		</head>
+		<script src="app.js"></script>
+	</head>
 	<body>
-		<div class="grid">
+		<div ng-controller="PropertyController as property">
+			<div class="grid">
 				<div class="col-1-2">
 					<h5> PROPERTY RESULTS </h5>
-
+						<ul ng-repeat="result in results" ng-show="isVisible(result.id)">
+							<li ng-repeat="agenc in result.agency">
+								<img ng-src="{{agenc.logo}}"/>
+							</li>
+							<li>Price: {{result.price}}</li>
+						</ul>
 				</div>
 
 				<div class="col-1-2">
 					
 					<h5> SAVED PROPERTIES</h5>
+						<ul ng-repeat="save in saved" ng-show="isVisible(save.id)">
+							<li ng-repeat="agenc in save.agency">
+								<img ng-src="{{agenc.logo}}"/>
+							</li>	
+							<li>Price: {{save.price}}</li>
+						</ul>
 				</div>
+			</div>
 		</div>
-
 	</body>
 </html>
