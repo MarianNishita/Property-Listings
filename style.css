@@ -1,0 +1,178 @@
+/**
+ * style.css
+ * This is the stylesheet for the entire one page Property-Listings application
+ * @author Marian John Bosco
+*/
+
+/* 
+==========================================================
+START Layout Styleing for Div blocks 'Results' and 'Saved'
+==========================================================
+ */
+[class*='col-']{
+	float:left;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-left: 60px;
+  max-width: 40%;
+  border: 2px solid #CECECE;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #FFFFFF
+}
+
+/* 
+==========================================================
+END Layout Styleing for Div blocks 'Results' and 'Saved'
+==========================================================
+ */
+
+/* 
+===============
+START CONTAINER
+===============
+ */
+
+.grid:after{
+  content : "";
+  display: block;
+	clear: both;
+
+}
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
+
+/* 
+=============
+END CONTAINER
+=============
+ */
+
+/* 
+==================
+START LIST HEADING
+==================
+ */
+h5 {  
+    font-weight: bold;
+    text-align:center;
+    font-style: sans-serif;
+    margin-bottom: 20px;   
+}
+/* 
+================
+END LIST HEADING
+================
+ */
+
+/* 
+===================
+START BUTTON DESIGN
+===================
+ */
+.button {
+ display: inline-block;
+  width: 100px;
+  padding: 8 px;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 11px; 
+  outline: none;
+  text-decoration: none;
+  transition: color 0.3s ease-out,
+              background-color 0.3s ease-out,
+              border-color 0.3s ease-out;
+}
+.button:hover,
+.button:active {
+  background-color: #055195;
+  border-color: #055195;
+  color: #fff;
+  transition: color 0.3s ease-in,
+              background-color 0.3s ease-in,
+              border-color 0.3s ease-in;
+} 
+/* 
+===================
+END BUTTON DESIGN
+===================
+ */
+
+ /* 
+====================
+START IMAGE RESIZING
+====================
+ */
+img{
+  max-width: 70%;
+}
+ /* 
+====================
+END IMAGE RESIZING
+====================
+ */
+
+ /* 
+===========================
+START PAGE BACKGROUND
+===========================
+ */
+body{
+  background: #A31B1B;
+}
+ /* 
+===========================
+END PAGE BACKGROUND
+===========================
+ */
+
+  /* 
+====================================
+START LAYOUT, ALIGN AND STYLING LIST
+====================================
+ */
+li {
+  text-align: center;
+  list-style-type: none;
+  color: #A31B1B;
+  font-weight: bold;
+  font-size: 11px;
+}
+ul{
+  display: table-row;
+}
+
+ul:hover {
+    background: #000;
+}
+  /* 
+====================================
+END LAYOUT, ALIGN AND STYLING LIST
+====================================
+ */
+
+   /* 
+====================================
+START CHILDREN LAYOUT
+====================================
+ */
+li:first-child {
+float: left;
+margin-bottom: 2px;
+}
+li:last-child{
+  margin-bottom: 5px;
+}
+
+   /* 
+====================================
+END CHILDREN LAYOUT
+====================================
+ */

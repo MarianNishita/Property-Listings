@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
@@ -14,22 +15,27 @@
 			<div class="grid">
 				<div class="col-1-2">
 					<h5> PROPERTY RESULTS </h5>
-						<ul ng-repeat="result in results" ng-show="isVisible(result.id)">
+						<ul ng-repeat="result in results" ng-show="isVisible(result.id)" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
 							<li ng-repeat="agenc in result.agency">
 								<img ng-src="{{agenc.logo}}"/>
 							</li>
+							<li><img class="rounded mx-auto d-block" ng-src="{{result.mainImage}}"/></li>
 							<li>Price: {{result.price}}</li>
+							<li><button class="button" ng-show="hoverEdit" ng-click="addProperty(result)">Add Property</button>
+							</li>
 						</ul>
 				</div>
 
 				<div class="col-1-2">
 					
 					<h5> SAVED PROPERTIES</h5>
-						<ul ng-repeat="save in saved" ng-show="isVisible(save.id)">
+						<ul ng-repeat="save in saved" ng-show="isVisible(save.id)" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
 							<li ng-repeat="agenc in save.agency">
 								<img ng-src="{{agenc.logo}}"/>
 							</li>	
+							<li><img class="rounded mx-auto d-block" ng-src="{{save.mainImage}}"/></li>
 							<li>Price: {{save.price}}</li>
+							<li><button class="button" ng-show="hoverEdit" ng-click="removeProperty(save)">Remove Property</button>
 						</ul>
 				</div>
 			</div>
